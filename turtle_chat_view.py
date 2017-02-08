@@ -42,16 +42,35 @@ from turtle_chat_widgets import Button, TextInput
 class TextBox(TextInput):
     def draw_box(self):
         self.draw = turtle.clone()
+        self.draw.penup()
+        self.draw.goto(-300, -250)
         self.draw.pendown()
-        self.draw.goto(250, 0)
-        self.draw.goto(250,100)
-        self.draw.goto(0,100)
-        self.draw.goto(0,0)
+        self.draw.goto(-300,-175)
+        self.draw.goto(150,-175)
+        self.draw.goto(150,-250)
+        self.draw.goto(-300, -250)
+        self.writer.goto(-300,-250)
+
         
-    #def write_msg(self):
-        #self.writer.penup()
-        #self.writer.goto()
-        #self.writer.pendown
+
+        self.draw.stamp()
+        print('YAASS')
+        
+    def write_msg(self):
+        self.writer.clear()
+        self.writer.write(self.get_msg())
+        
+        #self.writer.write('hello')
+        #self.writer.goto(0, height)
+        #self.writer.goto(width,height)
+    def write_msg(self):
+        self.writer.clear()
+        if len(self.get_msg()) % self.letters_per_line ==0:
+            self.new_msg=self.new_msg+ "\r"
+            print(self.get.msg())
+        self.writer.write(self.get_msg())
+
+TextBox()
     
     
 
