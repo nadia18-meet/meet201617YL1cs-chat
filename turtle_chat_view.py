@@ -95,8 +95,15 @@ TextBox()
 #      you send messages and update message displays.
 #####################################################################################
 #####################################################################################
-
-
+class SendButton(Button):
+    def fun(self):
+        self.view.send_msg()
+        self.view.recieve_msg()
+        
+    def __init__(self,my_turtle=None,shape=None,pos=(0,0) ):
+        super(SendButton,self).__init__(self, my_turtle, shape,pos)
+        self.view= view()
+    
 ##################################################################
 #                             View                               #
 ##################################################################
