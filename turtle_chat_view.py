@@ -229,7 +229,7 @@ class View:
         show_this_msg=self.partner_name+' says:\r'+ msg
         #Add the message to the queue either using insert (to put at the beginning)
         #or append (to put at the end).
-        self.msg_queue.append(0, msg)
+        self.msg_queue.insert(0, msg)
 
         ######################WHY DO YOU HAVE THIS HERE????????????????????
         #Then, call the display_msg method to update the display
